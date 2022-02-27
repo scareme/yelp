@@ -11,24 +11,20 @@ How to run inside docker
 - `$ cd yelp`
 
 1. CPU only
-
 - Build docker image:
 ```bash
 $ docker build -t yelp_cpu -f CPUDockerfile .
 ```
-
 - Run docker container:
 ```bash
 $ docker run --name yelpc --rm -v /absolute/path/to/local/repo/yelp:/yelp -i -t yelp_cpu bash
 ```
 
 2. (or) with GPU support (You should have [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker))
-
 - Build docker image:
 ```bash
 docker build -t yelp_gpu -f GPUDockerfile .
 ```
-
 - Run docker container:
 ```bash
 docker run --gpus all --name yelpc --rm -v /absolute/path/to/local/repo/yelp:/yelp -i -t yelp_gpu bash
@@ -37,13 +33,12 @@ docker run --gpus all --name yelpc --rm -v /absolute/path/to/local/repo/yelp:/ye
 How to use
 ----------
 
-1. `src/preprocess_data.py`: Return bad (bad_review.json) and good (good_review.json) restaurant reviews for further training.
-
+1. (optional) `src/preprocess_data.py`: Return bad (bad_review.json) and good (good_review.json) restaurant reviews for further training.
 ```bash
 $ python src/preprocess_data.py --business-file=yelp_dataset/yelp_academic_dataset_business.json --reviews-file=yelp_dataset/yelp_academic_dataset_review.json --output-dir=data
 ```
 
-2. `src/train_model.py`: Train models.
+2. (optional) `src/train_model.py`: Train models. Or you can use pre-trained stored in `data` in the next steps.
 ```bash
 $ python src/train_model.py --reviews-path=data/bad_review.json --path-to-save-model=data/bad_model.pt --path-to-save-tokenizer=data/bad_tokenizer.dump
 $ python src/train_model.py --reviews-path=data/good_review.json --path-to-save-model=data/good_model.pt --path-to-save-tokenizer=data/good_tokenizer.dump

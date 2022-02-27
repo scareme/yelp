@@ -129,7 +129,7 @@ def generate(model_path, tokenizer_path, seed_phrase):
 @click.option("--tokenizer-path", required=True, type=str)
 @click.option("--seed-phrase", required=True, type=str)
 @click.option("--beam-size", required=True, type=int)
-def autocomplete(model_path, tokenizer_path, seed_phrase, beam_size):
+def autocompletion(model_path, tokenizer_path, seed_phrase, beam_size):
     device = torch.device(CUDA if torch.cuda.is_available() else CPU)  # pylint: disable=no-member
 
     model = CharLSTM.from_disk(model_path, device)

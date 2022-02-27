@@ -1,0 +1,10 @@
+RESTAURANT = "restaurant"
+CATEGORIES = "categories"
+BUSINESS_ID = "business_id"
+REVIEW_ID = "review_id"
+TEXT = "text"
+STARS = "stars"
+BAD_REVIEW_FILE = "bad_review.json"
+GOOD_REVIEW_FILE = "good_review.json"
+MAX_LEN = 250
+ENCODING = "utf-8"

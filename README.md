@@ -1,4 +1,4 @@
-Restaurant Review Generator And String Autocompletion
+Restaurant Review Generator And Word Autocompletion
 ======================================================
 Restaurant reviews generator and string autocompletion model are trained on the dataset available at [https://www.yelp.com/dataset/download](https://www.yelp.com/dataset/download). There are two versions of each model: one trained on bad (1-2 stars) reviews, another trained on good
 (5 stars) reviews.

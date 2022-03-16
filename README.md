@@ -23,11 +23,11 @@ $ docker run --name yelpc --rm -v /absolute/path/to/local/repo/yelp:/yelp -i -t 
 2. (or) with GPU support (You should have [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker))
 - Build docker image:
 ```bash
-docker build -t yelp_gpu -f GPUDockerfile .
+$ docker build -t yelp_gpu -f GPUDockerfile .
 ```
 - Run docker container:
 ```bash
-docker run --gpus all --name yelpc --rm -v /absolute/path/to/local/repo/yelp:/yelp -i -t yelp_gpu bash
+$ docker run --gpus all --name yelpc --rm -v /absolute/path/to/local/repo/yelp:/yelp -i -t yelp_gpu bash
 ```
 
 How to use
